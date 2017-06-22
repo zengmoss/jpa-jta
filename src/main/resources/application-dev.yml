@@ -1,0 +1,54 @@
+spring:
+    datasource:
+        mysql:
+            xaDataSource:
+                type: com.alibaba.druid.pool.DruidDataSource
+                url: jdbc:mysql://test-mysql01.biostime.it:16052/mama100?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
+                driver-class-name: com.mysql.jdbc.Driver
+                username: mama100
+                password: Dd23FfASdfDF
+                initialSize: 5
+                minIdle: 5
+                maxActive: 10
+                maxWait: 60000
+                timeBetweenEvictionRunsMillis: 60000
+                minEvictableIdleTimeMillis: 300000
+                validationQuery: SELECT 1 FROM DUAL
+                testWhileIdle: true
+                testOnBorrow: false
+                testOnReturn: false
+                poolPreparedStatements: true
+                maxPoolPreparedStatementPerConnectionSize: 20
+                filters: stat,wall,slf4j
+                connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+                max-wait: 5000
+                test-on-borrow: true
+            borrowConnectionTimeout: 300
+            maxPoolSize: 10
+        oracle:
+            xaDataSource:
+                type: com.alibaba.druid.pool.DruidDataSource
+                url: jdbc:oracle:thin:@test-oracle.biostime.it:1521:mama100
+                driver-class-name: oracle.jdbc.driver.OracleDriver
+                username: MAMA100_OWNER
+                password: DFIcieAIO0Mg2M
+                initialSize: 5
+                minIdle: 5
+                maxActive: 10
+                maxWait: 60000
+                timeBetweenEvictionRunsMillis: 60000
+                minEvictableIdleTimeMillis: 300000
+                validationQuery: SELECT 1 FROM DUAL
+                testWhileIdle: true
+                testOnBorrow: false
+                testOnReturn: false
+                poolPreparedStatements: true
+                maxPoolPreparedStatementPerConnectionSize: 20
+                filters: stat,wall,slf4j
+                connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+                max-wait: 5000
+                test-on-borrow: true
+            borrowConnectionTimeout: 300
+            maxPoolSize: 10
+    jpa:
+        show-sql: true

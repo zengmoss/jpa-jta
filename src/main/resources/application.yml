@@ -1,0 +1,18 @@
+server:
+    port: 6060
+    context-path: /jpa-jta
+spring:
+    profiles:
+        active: dev
+    http:
+        encoding:
+            force: true
+#\u542f\u7528shutdown
+#\u7981\u7528\u5bc6\u7801\u9a8c\u8bc1
+endpoints:
+    shutdown:
+        enabled: true
+        sensitive: false
+management:
+    security:
+        enabled: false
